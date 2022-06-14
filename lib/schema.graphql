@@ -1,0 +1,43 @@
+
+type Course {
+  _id: ID!
+  title: String!
+  teacher: String
+  description: String!
+  topic: String
+}
+type Producto {
+  _id: ID!
+  nombre: String!
+  precio: String!
+  descripcion: String
+}
+
+type Query {
+  "Devuelve todos cursos"
+  getCourses: [Course]
+  "Devuelve un curso"
+  getCourse(_id: ID!): Course
+  "EliminaCurso"
+  delateCource(_id: ID!): Course
+  "Devuelve todos los productos"
+  getProductos: [Producto]
+ 
+
+}
+
+type Mutation{
+  "agregar nuevo curso"
+  createCourse(title: String!,teacher: String,description: String!, topic: String):Course
+  "actualiza curso"
+  updateCourse(id: ID!,title:String!,teacher:String,description:String!,topic:String):Course
+  "agregar nuevo producto"
+  createProducto(nombre: String!, precio: String!, descripcion: String):Producto
+  "actualiza producto"
+  updateProducto(_id: ID!,nombre: String!, precio: String!, descripcion: String):Producto
+  "Elimina curso"
+  delateProducto(_id: ID!): String
+}
+
+
+
